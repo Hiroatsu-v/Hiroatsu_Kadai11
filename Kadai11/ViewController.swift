@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var selectionLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction private func exitCancel(segue: UIStoryboardSegue) {
     }
 
-
+    @IBAction private func exitInput(segue: UIStoryboardSegue) {
+        // swiftlint:disable:next force_cast
+        let next = segue.source as! TableViewController
+        selectionLabel.text = next.selectedPrefectureName
+    }
 }
-
